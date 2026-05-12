@@ -78,7 +78,7 @@ const initDB = async () => {
     `);
     console.log('✅ Database tables ready');
   } catch (err) {
-    console.error('❌ DB init failed:', err.message);
+    console.error('❌ DB init failed:', err);
     process.exit(1);
   }
 };
@@ -87,6 +87,6 @@ const initDB = async () => {
 const PORT = process.env.PORT || 5000;
 initDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`🚀 Backend running on http://localhost:${PORT}`);
+    console.log(` Backend running on http://localhost:${PORT}`);
   });
 });
